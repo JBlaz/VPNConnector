@@ -1,0 +1,9 @@
+<VPN
+  name="Dat VPN"
+  proto="L2TP"
+  address="sweetvpnaddress.com"
+  l2tppsk="bigoldlogsupersecurepassword"
+  user="minamebro"
+  password="supersecurepasswordwithlotsofspecialcharacters"
+  connect='true'
+  samePassword='true' />
