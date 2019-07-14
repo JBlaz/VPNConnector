@@ -171,7 +171,6 @@ if ($null -ne $xmlconf) {
 	[VpnHelper]::Add($pbkfile,$name,$serverurl,$proto,$l2tppsk,$user,$password)
 	Write-Host "Info: Finished adding VPN provider."
 
-	Write-Host "InfO: Conenct? $(-Not "false" -eq $vpn.connect)"
 	if (Test-Connection -computer "www.google.com" -count 1 -quiet) {
 		if (-Not ("false" -eq $vpn.connect)) {
 			Write-Host "Info: Connecting..."
@@ -201,7 +200,10 @@ if ($null -ne $xmlconf) {
 			#net use K: \\192.168.21.10\JoeC /user:$user $password
 		}
 	} else {
-		Write-Host -ForegroundColor Red "ERROR: Cannot connect to the VPN if the computer isn't connected to the Internet. Please ensure your device is connected and rerun the script."
+		Write-Host -ForegroundColor Red "ERROR: Cannot connect to the VPN if the computer isn't connected to the Internet.
+		`n==========================================================================
+		`n=======Please ensure your device is connected and rerun the script.=======
+		`n==========================================================================`n"
 	}
 }
 
